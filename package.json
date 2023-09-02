@@ -1,0 +1,24 @@
+{
+  "name": "threadblend",
+  "version": "0.1.0",
+  "description": "A discord.js bot.",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "start": "tsc && node dist/index.js",
+    "deploy": "tsc && node dist/deploy.js"
+  },
+  "author": "Jomity",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.4.2",
+    "@types/node-schedule": "^2.1.0",
+    "better-sqlite3": "^8.4.0",
+    "discord.js": "^14.11.0",
+    "node-schedule": "^2.1.1",
+    "quick.db": "^9.1.7",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.1.6"
+  }
+}
