@@ -5,7 +5,7 @@ import { ExtendedClient, GuildData, UserData } from "../structures";
 module.exports = {
 	name: 'messageCreate',
     async execute(message: Message) {
-        if (message.interaction || !message.inGuild() || message.author.bot) return;
+        if (message.interactionMetadata || !message.inGuild() || message.author.bot) return;
 
         let user: UserData | null = await (message.client as ExtendedClient).db.get(`users.${message.author.id}`);
 

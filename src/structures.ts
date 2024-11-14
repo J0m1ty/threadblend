@@ -1,9 +1,9 @@
-import { AutocompleteFocusedOption, AutocompleteInteraction, ChatInputCommandInteraction, Client, Collection, Message, SlashCommandBuilder, TextChannel } from "discord.js";
+import { AutocompleteFocusedOption, AutocompleteInteraction, ChatInputCommandInteraction, Client, Collection, Message, SlashCommandBuilder, SlashCommandOptionsOnlyBuilder, SlashCommandSubcommandsOnlyBuilder, TextChannel } from "discord.js";
 import { QuickDB } from "quick.db";
 
 export interface Command {
     plugin: PluginName | null;
-    data: SlashCommandBuilder;
+    data: SlashCommandBuilder | SlashCommandSubcommandsOnlyBuilder | SlashCommandOptionsOnlyBuilder;
     autocomplete?: (focusedOption: AutocompleteFocusedOption, interaction: AutocompleteInteraction) => Promise<string[]>;
     execute: (interaction: ChatInputCommandInteraction) => Promise<void>;
 }
